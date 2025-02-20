@@ -4,10 +4,6 @@ import video2 from '~/videos/video2.mp4'; // Thêm các video khác
 import video3 from '~/videos/video3.mp4';
 import video4 from '~/videos/video4.mp4';
 
-import styles from '~/Home/Home.module.scss';
-import classNames from 'classnames';
-
-const cx = classNames.bind(styles);
 function Home() {
     const videoRefs = useRef([]);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -28,7 +24,7 @@ function Home() {
 
     return (
         <div>
-            <div className={cx('video-list')}>
+            <div>
                 {videos.map((video, index) => (
                     <div
                         key={index}
