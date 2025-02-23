@@ -1,7 +1,6 @@
 .wrapper {
     border-top: 1px solid #e3e3e4;
 }
-
 .label {
     padding: 8px;
     font-size: 1.4rem;
@@ -13,7 +12,9 @@
     padding: 8px;
     cursor: pointer;
 }
-
+.account-item:hover {
+    background-color: #ece3e8fc;
+}
 .avatar {
     width: 32px;
     height: 32px;

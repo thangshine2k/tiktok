@@ -1,0 +1,18 @@
+/* styles.css */
+.video-container {
+    width: 720px;
+    height: 93vh;
+    overflow-y: scroll; /* Cuộn dọc */
+    scroll-snap-type: y mandatory; /* Cuộn chụp (snap) */
+    border-radius: 10px;
+}
+
+.video-wrapper {
+    width: 500px;
+    height: 94vh;
+    scroll-snap-align: start; /* Căn chỉnh cuộn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
