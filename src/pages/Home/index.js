@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import video1 from '~/videos/video1.mp4';
 import video2 from '~/videos/video2.mp4';
 import video3 from '~/videos/video3.mp4';
@@ -31,10 +31,8 @@ function Home() {
         const videoElement = videoRefs.current[index];
         if (videoElement.paused) {
             videoElement.play();
-            // setIsPlaying((prevState) => prevState.map((state, i) => (i === index ? true : state)));
         } else {
             videoElement.pause();
-            // setIsPlaying((prevState) => prevState.map((state, i) => (i === index ? false : state)));
         }
     };
 
@@ -47,6 +45,31 @@ function Home() {
     };
 
     const videos = [video5, video6, video7, video8, video4, video1, video2, video3];
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.play();
+                    } else {
+                        entry.target.pause();
+                    }
+                });
+            },
+            { threshold: 0.5 },
+        );
+
+        videoRefs.current.forEach((video) => {
+            if (video) {
+                observer.observe(video);
+            }
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
 
     return (
         <div className="video-container">
@@ -64,25 +87,7 @@ function Home() {
                         controls={false}
                     />
                     <div className="list-icon">
-                        <button
-                            onClick={() => handlePlayPause(index)}
-                            style={{
-                                position: 'relative',
-                                // top: '50%',
-                                // left: '50%',
-                                // transform: 'translate(-50%, -50%)',
-                                // fontSize: '24px',
-                                // backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                // color: 'white',
-                                // border: 'none',
-                                // borderRadius: '50%',
-                                // width: '40px',
-                                // height: '40px',
-                                // cursor: 'pointer',
-                            }}
-                        >
-                            {/* {isPlaying[index] ? '||' : '>'} */}
-                        </button>
+                        <button onClick={() => handlePlayPause(index)}></button>
                         <Image
                             className="user-avatar"
                             src="https://p9-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/66c9fd27ae8c24c1a47e4c3035740df6~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&nonce=47315&refresh_token=78aec2578911176a0c46edc4bd50ee1f&x-expires=1740499200&x-signature=lXSMkM4JOljUFc3C0miX%2BhM8LiU%3D&idc=my&ps=13740610&shcp=81f88b70&shp=a5d48078&t=4d5b0474"
