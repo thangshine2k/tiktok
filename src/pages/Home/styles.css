@@ -1,6 +1,6 @@
 /* styles.css */
 .video-container {
-    width: 720px;
+    width: 1380px;
     height: 93vh;
     overflow-y: scroll; /* Cuộn dọc */
     scroll-snap-type: y mandatory; /* Cuộn chụp (snap) */
@@ -8,11 +8,111 @@
 }
 
 .video-wrapper {
-    width: 500px;
     height: 94vh;
     scroll-snap-align: start; /* Căn chỉnh cuộn */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    top: 40px;
+    /* left: 20px; */
+}
+.user-avatar {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 14px;
+    cursor: pointer;
+    position: relative;
+    bottom: 180px;
+}
+
+.button-addfriend {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: -176px;
+    right: 35px;
+    background-color: #fe2c55;
+    color: aliceblue;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.button-tym {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 50%;
+    right: 70px;
+    top: -120px;
+    cursor: pointer;
+}
+.count-tym {
+    position: relative;
+    top: 20px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+.button-comment {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 50%;
+    right: 112px;
+    top: -50px;
+    cursor: pointer;
+}
+.count-comment {
+    font-size: 12px;
+    position: relative;
+    top: 17px;
+    opacity: 0.8;
+}
+.button-save_local {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 50%;
+    right: 153px;
+    top: 20px;
+    cursor: pointer;
+}
+.count-save_local {
+    font-size: 12px;
+    position: relative;
+    top: 18px;
+    opacity: 0.8;
+}
+.button-share {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 50%;
+    right: 194px;
+    top: 90px;
+    cursor: pointer;
+}
+
+.count-share {
+    font-size: 12px;
+    position: relative;
+    top: 18px;
+    opacity: 0.8;
+}
+
+.user-avatar_music {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 14px;
+    cursor: pointer;
+    right: 250px;
+    top: 164px;
 }

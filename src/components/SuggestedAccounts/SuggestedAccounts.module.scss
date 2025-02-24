@@ -32,6 +32,7 @@
     font-size: 1.6rem;
     color: #161823;
     line-height: 1;
+    white-space: nowrap;
 }
 
 .check {
@@ -42,7 +43,10 @@
 
 .name {
     font-size: 1.2rem;
-    opacity: #161823bf;
+    color: #161823bf;
+    white-space: nowrap; /* Ngăn không cho xuống dòng */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu quá dài */
 }
 
 .more-btn {
